@@ -1,0 +1,13 @@
+{% extends "visitas/base.html" %}
+{% block title %}Marcar Salida{% endblock %}
+{% block content %}
+    <h1 class="text-2xl font-bold mb-4">Marcar salida para: {{ visita.nombre }}</h1>
+    <form method="post" class="space-y-3">
+        {% csrf_token %}
+        <label for="id_hora_salida">Hora de Salida:</label>
+        <input type="datetime-local" id="id_hora_salida" name="hora_salida" value="{{ visita.hora_salida|date:'Y-m-d\TH:i' }}">
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Guardar</button>
+    </form>
+</body>
+</html>
+{% endblock %}

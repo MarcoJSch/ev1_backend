@@ -1,0 +1,31 @@
+{% extends "visitas/base.html" %}
+{% block title %}Lista de Visitas{% endblock %}
+{% block content %}
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Lista de Visitas</h1>
+        <form method="get" action=".">
+            <input type="text" name="q" placeholder="Buscar por Nombre o RUT" value="{{ request.GET.q }}" class="border p-2 rounded"/>
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Buscar</button>
+        </form>
+    </div>
+    <ul class="space-y-3 flex-1 mb-5">
+        {% for visita in visitas %}
+            <li class="border p-4 rounded bg-white shadow-sm flex justify-between items-center">
+                <div>
+                    <p>{{ visita.nombre }} - {{ visita.rut }}</p>
+                    <p class="text-gray-600">{{ visita.motivo }}</p>
+                    <p>Hora de Ingreso: {{ visita.hora_entrada }}</p>
+                    <p>Hora de Salida: {% if visita.hora_salida %}{{ visita.hora_salida }}{% else %}Sin registrar{% endif %}</p>
+                </div>
+                <div>
+                    {% if visita.estado %}
+                        <button onclick="window.location.href='{% url 'marcar_salida' visita.pk %}'" class="bg-red-500 text-white px-4 py-2 rounded">Marcar salida</button>
+                    {% else %}
+                        <span class="text-green-600 font-bold">Visita finalizada</span>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'registrar_visita' %}" class="bg-green-500 text-white px-4 py-2 rounded">Nueva Visita</a>
+{% endblock %}

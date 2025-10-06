@@ -1,0 +1,12 @@
+{% extends "visitas/base.html" %}
+{% block title %}Registrar nueva visita{% endblock %}
+{% block content %}
+    <div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4 text-green-700">Registrar nueva visita</h1>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300">Guardar</button>
+        </form>
+    </div>
+{% endblock %}
