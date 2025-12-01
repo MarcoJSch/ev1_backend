@@ -1,1 +1,2 @@
-web: gunicorn registro_visitas.wsgi
+web: gunicorn heroku.wsgi
+release: python manage.py migrate
