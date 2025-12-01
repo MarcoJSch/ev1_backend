@@ -1,0 +1,1 @@
+web: gunicorn registro_visitas.wsgi
