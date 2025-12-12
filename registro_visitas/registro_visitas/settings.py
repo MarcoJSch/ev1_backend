@@ -30,10 +30,23 @@ SECRET_KEY = 'django-insecure-0c8j%i*-ta*=e%hu**lg6yo4jj7$zkhi*%pyf65r!$2kcmzxl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mj-probandoheroku-271a1adfbc20.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['mj-probandoheroku-271a1adfbc20.herokuapp.com',
+                'localhost',
+                '127.0.0.1',
+                '*' #permiter todas las conexiones entrantes
+                ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+#STATICFILES_DIRS = [
+#    '/',
+#]
+
+STATIC_ROOT = '/'
 
 # Application definition
 
@@ -130,10 +143,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
