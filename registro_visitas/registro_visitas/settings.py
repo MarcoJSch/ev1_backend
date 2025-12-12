@@ -39,14 +39,19 @@ ALLOWED_HOSTS = ['mj-probandoheroku-271a1adfbc20.herokuapp.com',
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-STATICFILES_DIRS = [
-    '/',
-]
+#STATICFILES_DIRS = [
+#    '/',
+#]
 
-STATIC_ROOT = '/'
+#STATIC_ROOT = '/'
+
+#probando lo que me dice la ia:C
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Application definition
 
