@@ -6,4 +6,4 @@ Instrucciones:
 cmd
     python -m venv venv
     source venv/Scripts/activate.bat
-    pip install -r requeriments.txt
+    pip install -r requirements.txt
