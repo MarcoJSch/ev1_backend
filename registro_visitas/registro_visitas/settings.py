@@ -42,9 +42,9 @@ ALLOWED_HOSTS = ['mj-probandoheroku-271a1adfbc20.herokuapp.com',
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-#STATICFILES_DIRS = [
-#    '/',
-#]
+STATICFILES_DIRS = [
+    '/',
+]
 
 STATIC_ROOT = '/'
 
